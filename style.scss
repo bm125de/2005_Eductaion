@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    scroll-behavior: smooth;
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+}
+
+ ::selection {
+    background-color: rgb(25, 0, 255);
+    color: white;
+    filter: invert(1);
+}
+
+.nav {
+    .right {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        // background-color: blue;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        box-sizing: border-box;
+        padding-right: 2.5vw;
+        a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1vw;
+            font-size: 20px;
+            letter-spacing: 4px;
+        }
+    }
+    .left {
+        width: 20%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        box-sizing: border-box;
+        padding-left: 2.5vw;
+        color: rgb(255, 255, 255);
+        // background-color: chartreuse;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+    text-shadow: rgba(0,
+    0,
+    0,
+    .5) 0px 0px 20px;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+}
+
+.frame {
+    width: 100%;
+    // height: 100%;
+    @for $i from 1 to 7 {
+        h#{$i} {
+            margin: 0;
+        }
+    }
+    p {
+        margin: 0;
+    }
+    &-index {
+        // height: 1000vh;
+        // overflow: hidden;
+        box-sizing: border-box;
+        .header {
+            $header-background: url("united-nations-covid-19-response-3biD4LTasgY-unsplash.jpg");
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+            background-image: $header-background;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            .text {
+                height: 100%;
+                width: 40vw;
+                position: absolute;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                padding: 0 5vw;
+                padding-top: 8%;
+                box-sizing: border-box;
+                background-color: rgba(255, 255, 255, 0.7);
+                backdrop-filter: blur(20px);
+                h1 {
+                    font-size: 5vmax;
+                    font-weight: 900;
+                }
+                p {
+                    font-size: 1.2vmax;
+                }
+            }
+            .bg-info {
+                position: absolute;
+                right: 2vw;
+                bottom: 5vh;
+                box-sizing: border-box;
+                padding: 25px;
+                width: 20vw;
+                background-color: rgba(255, 255, 255, 0.5);
+                h2 {
+                    font-size: 20px;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                }
+                p {
+                    font-size: 10px;
+                }
+                a {
+                    padding: 5px;
+                    color: black;
+                    text-decoration: none;
+                    border-radius: 100%;
+                    transition: .3s;
+                    &:focus {
+                        background-color: rgba(0, 0, 0, 0.233);
+                    }
+                }
+            }
+        }
+        .nav-bg {
+            height: 80px;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            z-index: 500;
+        }
+        .why {
+            $why-images: url("united-nations-covid-19-response-EJrK0J8Jr7U-unsplash.jpg");
+            height: 80vh;
+            min-height: 720px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: black;
+            .images {
+                position: absolute;
+                right: 7vw;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 40vw;
+                height: 50vh;
+                background-image: $why-images;
+                background-size: cover;
+                background-position: center;
+            }
+            .text {
+                width: 35vw;
+                // height: 90%;
+                left: 10vw;
+                top: 30%;
+                position: absolute;
+                color: white;
+                // background-color: yellow;
+                text-align: right;
+                h1 {
+                    font-size: 50px;
+                    font-weight: 900;
+                }
+                p {
+                    font-size: 20px;
+                }
+                a {
+                    margin-top: 40px;
+                    // font-size: 15px;
+                    font-weight: 700;
+                    text-decoration: none;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    color: white;
+                    .material-icons {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+        .how {
+            width: 100%;
+            height: 80vh;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            // background-color: yellow;
+            .title {
+                position: absolute;
+                top: 50px;
+                left: 5vw;
+                h1 {
+                    font-weight: 900;
+                    font-size: 40px;
+                    margin: 20px 0;
+                }
+                p {
+                    font-size: 20px;
+                }
+            }
+            .icon {
+                @for $i from 1 to 4 {
+                    &-#{$i} {
+                        margin: 20px 0;
+                        font-size: 60px;
+                        font-weight: 900;
+                        position: absolute;
+                        left: 10vw;
+                        top: 12% +18%*$i;
+                        z-index: 200;
+                        cursor: pointer;
+                        &:hover~.bg-#{$i} {
+                            left: 10vw !important;
+                            opacity: 1;
+                        }
+                        &:hover~.text {
+                            // opacity: 1;
+                        }
+                        p {
+                            margin-top: -15px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+                &-2,
+                &-3 {
+                    &:hover~.bg-1 {
+                        opacity: 0;
+                        left: 5vw;
+                    }
+                }
+                &-1:hover~.text {
+                    h1 {
+                        &::after {
+                            content: '高度解析';
+                        }
+                    }
+                    p {
+                        &::after {
+                            content: '非同步教學可運用數位資源與工具(如因材網、學習拍、均一等) ，教師登入線上學習平臺備課，指派學生適宜課程、學習內容與作業，教師亦可依據學生的學習狀況，給予適時反饋，指派學習任務或課後作業繳交，透過線上學習平臺可記錄了解學生學習成效。';
+                        }
+                    }
+                }
+                &-2:hover~.text {
+                    h1 {
+                        &::after {
+                            content: '隨時學習';
+                        }
+                    }
+                    p {
+                        &::after {
+                            content: '廣義的混成學習則泛指結合應用不同的教學策略、教學方法、教學媒體、教學科技的一種教學模式，涵蓋同步（synchronous）與非同步（asynchronous）學習的一連串學習活動。';
+                        }
+                    }
+                }
+                &-3:hover~.text {
+                    h1 {
+                        &::after {
+                            content: '具有效率';
+                        }
+                    }
+                    p {
+                        &::after {
+                            content: '師生視訊影音討論、文字討論、電子白板共筆、線上即時問卷投票功能、線上即時檔案分享、分組討論功能、師生螢幕共享功能。';
+                        }
+                    }
+                }
+            }
+            .bg {
+                &-1 {
+                    position: absolute;
+                    left: 5vw;
+                    top: 10%;
+                    font-size: 50vh;
+                    font-weight: 900;
+                    color: rgba(0, 0, 0, 0.2);
+                    transition: .2s;
+                    left: 10vw;
+                    opacity: 1;
+                }
+                &-2,
+                &-3 {
+                    position: absolute;
+                    left: 5vw;
+                    top: 10%;
+                    font-size: 50vh;
+                    font-weight: 900;
+                    color: rgba(0, 0, 0, 0.2);
+                    opacity: 0;
+                    transition: .2s;
+                }
+            }
+            .text {
+                width: 40vw;
+                height: 100%;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                position: absolute;
+                right: 25vw;
+                // opacity: 0;
+                h1 {
+                    font-size: 40px;
+                    font-weight: 900;
+                    letter-spacing: 5px;
+                    margin: 20px 0;
+                    &::after {
+                        content: '高度解析';
+                    }
+                }
+                p {
+                    font-size: 18px;
+                    font-weight: 500;
+                    &::after {
+                        content: '非同步教學可運用數位資源與工具(如因材網、學習拍、均一等) ，教師登入線上學習平臺備課，指派學生適宜課程、學習內容與作業，教師亦可依據學生的學習狀況，給予適時反饋，指派學習任務或課後作業繳交，透過線上學習平臺可記錄了解學生學習成效。';
+                    }
+                }
+            }
+        }
+        .big-img {
+            $bgbg: url("garin-chadwick-AvSaOjB4XY4-unsplash.jpg");
+            width: 100%;
+            height: 150vh;
+            overflow: hidden;
+            background-image: $bgbg;
+            background-position: center 35%;
+            background-attachment: fixed;
+            background-size: cover;
+            position: relative;
+            .bi-info {
+                width: 500px;
+                height: auto;
+                position: absolute;
+                margin: auto;
+                right: 4vw;
+                bottom: 5vh;
+                background-color: #fff;
+                box-sizing: border-box;
+                padding: 30px;
+                p {
+                    margin: 20px 0;
+                }
+                a {
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: black;
+    height: 50vh;
+}
